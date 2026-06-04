@@ -1,0 +1,34 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+backend/.env
+frontend/.env
+
+# Local data cache
+# Keep the data directory structure, but do not commit downloaded KMLs or generated GeoParquet files.
+data/raw/kml/**/*.kml
+data/processed/*.parquet
+data/processed/*.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
