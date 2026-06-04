@@ -16,6 +16,8 @@ The app downloads Copernicus Sentinel-2 acquisition-plan KML files, parses the p
 - Provides a deck.gl map UI with satellite filters, acquisition-mode filters, date range, and time-difference threshold.
 - Keeps the default map view clean by showing overlap geometries first, with raw source swaths available as optional context.
 
+![img-1](assets/screenshots/img-1.png)
+
 ## Data note
 
 The Copernicus acquisition-plan KMLs describe **planned acquisition swaths**. They are useful for planning and exploratory analysis, but they should not be treated as exact product footprints.
