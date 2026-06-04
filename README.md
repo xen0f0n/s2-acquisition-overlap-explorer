@@ -4,6 +4,8 @@ A local web app for exploring planned Sentinel-2 acquisitions and finding near-s
 
 The app downloads Copernicus Sentinel-2 acquisition-plan KML files, parses the planned swath footprints into GeoParquet, computes pairwise or true three-satellite overlaps in Python, and renders the results in a React/deck.gl map interface.
 
+![img-1](assets/screenshots/img-1.png)
+
 ## What it does
 
 - Downloads the latest Sentinel-2 acquisition-plan KMLs for S2A, S2B, and S2C.
@@ -16,13 +18,26 @@ The app downloads Copernicus Sentinel-2 acquisition-plan KML files, parses the p
 - Provides a deck.gl map UI with satellite filters, acquisition-mode filters, date range, and time-difference threshold.
 - Keeps the default map view clean by showing overlap geometries first, with raw source swaths available as optional context.
 
-![img-1](assets/screenshots/img-1.png)
+## Status
 
-## Data note
+This is a small prototype, vibe-coded with ChatGPT.
 
-The Copernicus acquisition-plan KMLs describe **planned acquisition swaths**. They are useful for planning and exploratory analysis, but they should not be treated as exact product footprints.
+It came out of a discussion about how awkward it is to work with the official Sentinel-2 acquisition plan KML files when you just want to answer a simple question: *when do S2A, S2B, or S2C pass over the same area within a given time window?*
 
-The UI therefore treats the overlap geometries as planning-level results, not as authoritative product boundaries.
+The app fetches the public acquisition plan files, parses them, and shows possible overlaps on a map. It is useful for exploration, quick checks, and as a starting point for a better tool.
+
+It is **not** an operational planning service. Do not rely on it blindly for field campaigns, tasking decisions, commercial planning, or anything time-critical. Check the [official Copernicus/Sentinel acquisition plans](https://sentinels.copernicus.eu/copernicus/sentinel-2/acquisition-plans) before using the results for real decisions.
+
+## Data source and note
+
+This prototype uses the public Sentinel-2 acquisition plan KML files published by Copernicus/Sentinel Online:
+
+https://sentinels.copernicus.eu/copernicus/sentinel-2/acquisition-plans
+
+The app fetches these files, parses them, stores them locally, and shows the planned swaths on a map.
+
+The KMLs are useful for checking planned acquisitions, but they are not exact product footprints. Treat the map output as a planning aid, not as a final source of truth.
+
 
 ## Architecture
 
