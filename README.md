@@ -293,3 +293,8 @@ make test       # run backend tests
 - Add a small timeline panel showing when the selected matches occur.
 - Add a GitHub Actions workflow for backend tests and frontend build.
 
+## License
+
+This project is released under the MIT License. See [LICENSE](LICENSE).
+
+The acquisition-plan data itself comes from Copernicus/Sentinel public resources; this repository only licenses the application code and documentation.
